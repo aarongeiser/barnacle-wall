@@ -1,11 +1,11 @@
 // #include <SoftwareSerial.h>
 #include <FastLED.h>
-#define NUM_LEDS 398
-#define NUM_BARNACLES 43
+#define NUM_LEDS 19
+#define NUM_BARNACLES 2
 #define NUM_SENSORS 7
 #define DATA_PIN 13
 #define BRIGHTNESS  255
-#define FRAMES_PER_SECOND 50
+#define FRAMES_PER_SECOND 10
 
 
 CRGB leds[NUM_LEDS];
@@ -129,48 +129,7 @@ void setup() {
 
   // Barnacle mapping
   barnacles[0] =  new Barnacle(1, 0, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[1] =  new Barnacle(1, 10, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[2] =  new Barnacle(1, 20, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[3] =  new Barnacle(1, 27, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[4] =  new Barnacle(3, 34, CHSV(64, 255, 255), CHSV(64, 255, 255));  // Large
-  barnacles[5] =  new Barnacle(1, 41, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[6] =  new Barnacle(3, 50, CHSV(64, 255, 255), CHSV(64, 255, 255));  // Large
-  barnacles[7] =  new Barnacle(1, 57, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[8] =  new Barnacle(2, 65, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[9] =  new Barnacle(1, 81, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[10] = new Barnacle(2, 92, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[11] = new Barnacle(3, 105, CHSV(64, 255, 255), CHSV(64, 255, 255)); // Large
-  barnacles[12] = new Barnacle(2, 112, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[13] = new Barnacle(2, 125, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[14] = new Barnacle(1, 138, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[15] = new Barnacle(1, 145, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[16] = new Barnacle(1, 152, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[17] = new Barnacle(3, 159, CHSV(64, 255, 255), CHSV(64, 255, 255)); // Large
-  barnacles[18] = new Barnacle(2, 166, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[19] = new Barnacle(1, 180, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[20] = new Barnacle(1, 190, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[21] = new Barnacle(2, 197, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[22] = new Barnacle(2, 210, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[23] = new Barnacle(1, 223, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[24] = new Barnacle(1, 232, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[25] = new Barnacle(3, 239, CHSV(64, 255, 255), CHSV(64, 255, 255)); // Large
-  barnacles[26] = new Barnacle(2, 246, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[27] = new Barnacle(1, 253, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[28] = new Barnacle(3, 260, CHSV(64, 255, 255), CHSV(64, 255, 255)); // Large
-  barnacles[29] = new Barnacle(1, 267, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[30] = new Barnacle(2, 274, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[31] = new Barnacle(1, 287, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[32] = new Barnacle(1, 295, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[33] = new Barnacle(1, 305, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[34] = new Barnacle(2, 312, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[35] = new Barnacle(3, 325, CHSV(64, 255, 255), CHSV(64, 255, 255)); // Large
-  barnacles[36] = new Barnacle(1, 332, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[37] = new Barnacle(2, 339, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[38] = new Barnacle(2, 352, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[39] = new Barnacle(1, 365, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[40] = new Barnacle(1, 372, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[41] = new Barnacle(1, 379, CHSV(64, 255, 255), CHSV(64, 255, 255));
-  barnacles[42] = new Barnacle(1, 386, CHSV(64, 255, 255), CHSV(64, 255, 255));
+  barnacles[1] =  new Barnacle(2, 7, CHSV(64, 255, 255), CHSV(64, 255, 255));
 
   // Initialize LEDs
   FastLED.addLeds<WS2811, DATA_PIN, RGB>(leds, NUM_LEDS);
